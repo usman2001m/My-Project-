@@ -1,0 +1,255 @@
+                                
+<html>
+
+    <head>
+        <link rel="stylesheet" href="/styling/index.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    
+    <title></title>
+    </head>
+    <body>
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="/">Inshout Invoice Generator</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse float-right text-right" id="navbarColor01">
+                  <ul class="navbar-nav navbar-right">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">New Invoice <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./contact">View Invoice</a>
+                    </li>
+                </div>
+              </nav>
+    </header>
+      <div class="container" >      
+          <form  id="myform" onsubmit="event.preventDefault(); invoice_generator()"  class="needs-validation " novalidate method='post'>
+            <div class="row">
+               
+                <div class="col">
+                    <h3 style="margin-top:0.5em;">BILL TO </h3> 
+                <div class="form-row">
+                     <div class="form-group col-md-6">
+                     <label for="inputName"></label>
+                    <input type="text" class="form-control" id="inputName" placeholder="Company name" name="bcname" required>
+                    <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                    </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4"></label>
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="bemail"required>
+                    <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputAddress"></label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="Address" name="baddress"required>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputCity"></label>
+                    <input type="text" class="form-control" id="inputCity" placeholder="city" name="bcity"required>
+                  </div>
+                  <div class="form-group col-md-6">
+                        <label for="inputZip"></label>
+                        <input type="text" class="form-control" id="inputZip" placeholder="Zip/postal code" name="bzip">
+                  </div></div>
+                  <div class="form-row">
+                      <div class="form-group col-md-6">
+                       <label for="Country"></label>
+                        <select type="text" class="form-control" id="inputCountry" placeholder="Country" name="bcountry"required>
+                                    <option >country</option>
+                                  <option>Pakistan</option>
+                                  <option>India</option>
+                                  <option>China</option>
+                                  <option>England</option>
+                                  <option>korea</option>
+                                  <option>	France</option>
+                                  <option>	Spain</option>
+                                  <option>	United States</option>
+                                  <option>	Italy</option>
+                                  <option>	Turkey</option>
+                          </select>
+                          <div class="invalid-feedback">
+                                    Please provide a valid country.
+                                    </div>
+                      </div>
+                      <div class="form-group col-md-6">
+                            <label for="inputState"></label>
+                            <select type="text" class="form-control" id="inputState" placeholder="State" name="bstate"required>
+                                <option >state</option>
+                                <option>punjab</option>
+                                <option>sindh</option>
+                                <option >Balochistan</option>
+                                <option >Khyber Pakhtunkhwa</option>
+                                <option >Azad Jammu</option>
+                                <option > Gilgit Baltistan</option>
+                              </select>
+                                    <div class="invalid-feedback">
+                                    Please provide a valid state.
+                                    </div>
+                      </div></div> 
+                  </div>
+              <div class="col">
+                  <h3 style="margin-top:0.5em;">SHIP TO</h3> 
+                    <div class="form-row" style="    flex-wrap: nowrap;">
+                            <div class="form-group col-md-6">
+                            <label for="inputCumName"></label>
+                           <input type="text" class="form-control" id="inputCumName" placeholder="Your customer's name" name="sname"required>
+                           <div class="valid-feedback">
+                          Looks good!
+                          </div> 
+                           </div>
+                         <div class="form-group col-md-6">
+                           <label for="inputCumEmail4"></label>
+                           <input type="email" class="form-control" id="inputCumEmail4" placeholder="Your customer's email" name="semail"required>
+                           <div class="valid-feedback">
+                           Looks good!
+                            </div>
+                          </div>
+                        </div>
+                       <div class="form-group">
+                         <label for="inputCumAddress"></label>
+                         <input type="text" class="form-control" id="inputCumAddress" placeholder="Customer's address" name="saddress"required>
+                       </div>
+                       <div class="form-row">
+                         <div class="form-group col-md-6">
+                           <label for="inputCumCity"></label>
+                           <input type="text" class="form-control" id="inputCumCity" placeholder="city" name="scity"required>
+                         </div>
+                         <div class="form-group col-md-6">
+                               <label for="inputCumZip"></label>
+                               <input type="text" class="form-control" id="inputCumZip" placeholder="Zip/postal code"  name="szip">
+                         </div></div>
+                         <div class="form-row">
+                            <div class="form-group col-md-6">
+                             <label for="inputCumCountry"></label>
+                              <select type="text" class="form-control" id="inputCumCountry" placeholder="Country" name="scountry"required>
+                                  <option >country</option>
+                                  <option>Pakistan</option>
+                                  <option>India</option>
+                                  <option>China</option>
+                                  <option>England</option>
+                                  <option>korea</option>
+                                  <option>	France</option>
+                                  <option>	Spain</option>
+                                  <option>	United States</option>
+                                  <option>	Italy</option>
+                                  <option>	Turkey</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                Please provide a valid country.
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                  <label for="inputCumState"></label>
+                                  <select type="text" class="form-control" id="inputCumState" placeholder="State" name="sstate"required>
+                                      <option>state</option>
+                                      <option>punjab</option>
+                                <option>sindh</option>
+                                <option >Balochistan</option>
+                                <option >Khyber Pakhtunkhwa</option>
+                                <option >Azad Jammu</option>
+                                <option > Gilgit Baltistan</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                    Please provide a valid state.
+                                    </div>
+                            </div></div> 
+                          </div></div>  
+                     
+                     <div class="form-row" style="    margin: -1em 0em;
+                     width: 100%;" >
+                        <h3 style="margin-top:0.5em;">Enter the items you wish to bill</h3>
+                        
+                        <div class="container">
+                          <table id="myTable" class=" table order-list">
+                          <thead>
+                              <tr>
+                                  <td>item</td>
+                                  <td>description</td>
+                                  <td>quantity</td>
+                                  <td>price</td>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td >
+                                      <input type="text" name="Item" class="form-control" placeholder="item"  required/>
+                                  </td>
+                                  <td >
+                                      <input type="text" name="Description"  class="form-control" placeholder="Description" required/>
+                                  </td>
+                                  <td >
+                                      <input type="number" name="Quantity"  class="form-control" placeholder="quantity" required/>
+                                  </td>
+                                  <td >
+                                    <input type="text" name="Price"  class="form-control" placeholder="price"  onblur="findTotal()" required/>
+                                 </td>
+                                 <td > </td>
+                                  <td><a class="deleteRow"></a>
+                      
+                                  </td>
+                              </tr>
+                          </tbody>
+                          <tfoot>
+                              <tr>
+                                  <td colspan="5" style="text-align: left;">
+                                      <input type="button" class="btn btn-lg btn-block " id="addrow" value="Add Row" />
+                                  </td>
+                              </tr>
+                              <tr>
+                              </tr>
+                          </tfoot>
+                      </table>
+                      </div>
+                            </div>   
+                                
+                            
+                            
+
+       
+
+
+                            <p style="margin-top:0.7em;">Notes / Memo</p>
+                            <div class="footer"  required>
+                                
+                              <div class="row">
+                              <div class="col-md-9" >
+                              <textarea class="form-control" aria-label="With textarea" style="height:10em;"  name="comment" optional></textarea>
+                              </div>
+                              
+                              <div class="col-md-3">
+                              
+                              <input  class="form-control" type="text"  id="total" placeholder="Total" name="total" required style="padding:0.4em">
+                                  <input class="form-control" type="text"  id="total" placeholder="SubTotal" name="sub"required style="padding:0.4em">
+                                  <input class="form-control" type="text"  id="total" placeholder="GrandTotal" name="grand"required style="padding:0.4em">
+                                  <input class="form-control float-right" type="submit" name="sbname" id="inputSubmit" class="btn btn-primary" style="background: royalblue; color:white;     width: 100px;">
+                                  <i class="fa fa-pdf"  aria-hidden="true"></i></div>
+
+                              </div>
+                              
+                              
+                              </form></div></div>
+                              
+                            
+                                
+<script type="text/javascript" src="/scripts/index.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,16 @@
+
+.navbar-expand-lg .navbar-collapse {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+    padding-left: 45em;
+}
+
+.bg-primary {
+    background-color: #375a7f !important;
+    padding: 1em;
+    
+    padding-left: 8em !important;
+}
